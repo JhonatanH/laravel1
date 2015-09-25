@@ -17,14 +17,12 @@
 
 		 	$this->attributes['url'] = str_slug($value);
 	 }
- }
-
-/**
-* Relacionamento entre o model Category e o atual (Product)
-*/
-public function categories()
-{
-//este é um relacionamento muitos para muitos
-return $this->belongsToMany('App\Category');
-}
+		 /**
+	* Relacionamento entre o model Category e o atual (Product)
+	*/
+	public function categories()
+	{
+		//este é um relacionamento muitos para muitos
+		return $this->belongsToMany('App\Category');
+	}
 }

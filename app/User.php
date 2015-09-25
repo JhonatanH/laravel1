@@ -24,4 +24,17 @@
              else
                  $this->attributes['password'] = bcrypt($value);
          }
+
+	public function profile()
+	{
+		return $this->hasOne('App\Profile');
+	}
+
+	public function images()
+	{
+		return $this->hasMany('App\Image');
+	}
+
+
+
  }

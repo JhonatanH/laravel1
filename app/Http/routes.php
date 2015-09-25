@@ -41,12 +41,20 @@
 //  $users = DB::select('SELECT * FROM users WHERE 1=1');
 //  return view ('rotas', ['users'=>$users]);
 //  });
-Route::get('/all_users', ['uses'=>'UsersController@allUsers', 'as'=>'users.all_users']);
+// Route::get('/all_users', ['uses'=>'UsersController@allUsers', 'as'=>'users.all_users']);
 // $users = \DB::select('SELECT * FROM users WHERE id=?', [1]);
 
-Route::resource('products', 'ProductsController');
-Route::resource('users', 'UsersController');
-Route::resource('categories','CategoriesController');
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+	Route::match(
+		['get', 'post'],
+		'/products/categories/{id}',
+		['uses'=>'ProductsController@categories', 'as'=>'products.categories']
+	);
+
+	Route::resource('products', 'ProductsController');
+	Route::resource('users', 'UsersController');
+	Route::resource('categories', 'CategoriesController');
+});
 
 Route::get('/', function () {
     return view('welcome');

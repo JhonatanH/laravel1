@@ -25,7 +25,7 @@
      public function store(Request $request)
      {       
          $this->getModel()->create($request->all());
-         return redirect()->route($this->path.'.index');
+         return redirect()->route('admin.'.$this->path.'.index');
      }
 
      public function show($id)
@@ -44,14 +44,14 @@
      {
          $data = $this->getModel()->find($id);
          $data->update($request->all());
-         return redirect()->route($this->path.'.index');
+        return redirect()->route('admin.'.$this->path.'.index');
      }
 
      public function destroy($id)
      {
          $data = $this->getModel()->find($id);
          $data->delete();
-         return redirect()->route($this->path.'.index');
+        return redirect()->route('admin.'.$this->path.'.index');
      }
 
          protected function getModel()
