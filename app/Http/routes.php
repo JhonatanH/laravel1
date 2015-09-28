@@ -61,6 +61,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware'=>'auth']
 
 });
 
+	Route::get('/produtos','ProductsController@index');
+	Route::get('/produtos/{id}',['as'=>'produtos.show','uses'=>'ProductsController@show']);
+
 	// Route::get('admin/auth/login', 'Auth\AuthController@getLogin');
 	// Route::post('admin/auth/login', 'Auth\AuthController@postLogin');
 	// Route::get('admin/auth/logout', 'Auth\AuthController@getLogout');
