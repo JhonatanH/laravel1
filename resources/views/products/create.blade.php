@@ -7,11 +7,16 @@
 
  <form action="{{ route('admin.products.store') }}" method="POST">
 	 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-		 Title: <input type="text" name="title" value="{{ old('title') }}"><br>
-		 Body: <textarea name="body" value="{{ old('body') }}"></textarea><br>
-		 Value: <input type="text" name="value" value="{{ old('value') }}"><br>
-		 Quantity: <input type="number" name="qtd" value="{{ old('qtd') }}"><br>
-		 Url: <input type="text" name="url" value="{{ old('url') }}"><br>
+		 <label>Título</label> 
+		 <input type="text" name="title" value="{{ old('title') }}" class="form-control"><br>
+		 <label>Corpo</label> 
+		 <textarea name="body" value="{{ old('body') }}" class="form-control"></textarea><br>
+		 <label>Valor</label> 
+		 <input type="text" name="value" value="{{ old('value') }}" class="form-control"><br>
+		 <label>Quantidade</label> 
+		 <input type="number" name="qtd" value="{{ old('qtd') }}" class="form-control"><br>
+		 <label>URL</label> 
+		 <input type="text" name="url" value="{{ old('url') }}" class="form-control"><br>
 	 <input type="submit">
  </form>
   @endsection

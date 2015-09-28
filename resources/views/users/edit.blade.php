@@ -9,9 +9,9 @@
 <form action="{{ route('admin.users.update', ['id'=>$data->id]) }}" class="form" method="POST">
 	 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 	 <input type="hidden" name="_method" value="PUT">
-		 Name: <input type="text" name="name" class="form-control" value="{{ $data->name}}"><br>
-		 Email: <input type="email" name="email" class="form-control" value="{{ $data->email }}"><br>
-		 Password: <input type="password" name="password" class="form-control" value="">
+		 Name: <input type="text" name="name" class="form-control" value="{{ $data->name}}" class="form-control"><br>
+		 Email: <input type="email" name="email" class="form-control" value="{{ $data->email }}" class="form-control"><br>
+		 Password: <input type="password" name="password" class="form-control" value="" class="form-control">
 	 <br>
 	 <input type="submit" class="btn btn-primary">
 </form>

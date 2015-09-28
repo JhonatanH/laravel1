@@ -8,8 +8,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
+
 class AuthController extends Controller
 {
+    protected $loginPath = '/admin/auth/login'; //endereço de login
+    protected $redirectPath = '/admin/products'; //endereço de redirecionamento após o login
+
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller
